@@ -1,0 +1,19 @@
+{
+  "connection_key": "request",
+  "result": true,
+  "redis_key": "abcdefg",
+  "filepath": "/var/lib/aion/Data/rededge_sdc/abcdef.json",
+  "api_status_code": 200,
+  "runtime_session_id": "boi9ar543dg91ipdnspi099u231280ab0v8af0ew",
+  "business_partner": 201,
+  "service_label": "FUNCTION_DPFM_DELIVERY_NOTICE_EDI_FOR_SMES_CSV_READS",
+  "api_type": "function",
+  "Delivery": {
+    "FilePath": "/inputs/delivery-notice-edi-for-smes/csv/boi9ar543dg91ipdnspi099u231280ab0v8af0ew.csv"
+  },
+  "api_schema": "DPFMDeliveryNoticeEDIForSMEsCSVReads",
+  "accepter": ["All"],
+  "deleted": false,
+  "api_processing_result": true,
+  "api_processing_error": ""
+}
