@@ -19,11 +19,11 @@ type DeliverySDC struct {
 }
 
 type DataConcatenation struct {
-	Header DeliveryHeader `json:"DeliveryHeader"`
-	Item   []DeliveryItem `json:"DeliveryItem"`
+	Header DeliveryNoticeHeader `json:"DeliveryNoticeHeader"`
+	Item   []DeliveryNoticeItem `json:"DeliveryNoticeItem"`
 }
 
-type DeliveryHeader struct {
+type DeliveryNoticeHeader struct {
 	ExchangedDeliveryNoticeDocumentIdentifier                      string   `json:"ExchangedDeliveryNoticeDocumentIdentifier" csv:"1"`
 	DeliveryNoticeDocument                                         *string  `json:"DeliveryNoticeDocument" csv:"2"`
 	ExchangedDocumentContextSpecifiedTransactionIdentifier         *string  `json:"ExchangedDocumentContextSpecifiedTransactionIdentifier" csv:"3"`
@@ -120,7 +120,7 @@ type DeliveryHeader struct {
 	TradeDeliveryNoticeMonetarySummationIncludingTaxesTotalAmount  *float32 `json:"TradeDeliveryNoticeMonetarySummationIncludingTaxesTotalAmount" csv:"94"`
 }
 
-type DeliveryItem struct {
+type DeliveryNoticeItem struct {
 	ExchangedDeliveryNoticeDocumentIdentifier                                      string   `json:"ExchangedDeliveryNoticeDocumentIdentifier" csv:"1"`
 	DeliveryNoticeDocumentItemlineIdentifier                                       string   `json:"DeliveryNoticeDocumentItemlineIdentifier" csv:"95"`
 	DeliveryNoticeDocumentItemlineStatusCode                                       *string  `json:"DeliveryNoticeDocumentItemlineStatusCode" csv:"96"`

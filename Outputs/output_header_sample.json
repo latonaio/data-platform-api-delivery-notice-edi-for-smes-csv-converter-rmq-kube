@@ -9,7 +9,7 @@
   "service_label": "FUNCTION_DELIVERY_NOTICE_EDI_FOR_SMES_DATA_CONCATENATION",
   "api_type": "function",
   "DataConcatenation": {
-    "DeliveryHeader": {
+    "DeliveryNoticeHeader": {
       "ExchangedDeliveryNoticeDocumentIdentifier": "100",
       "DeliveryNoticeDocument": null,
       "ExchangedDocumentContextSpecifiedTransactionIdentifier": null,
@@ -105,7 +105,7 @@
       "TradeDeliveryNoticeSettlementMonetarySummationNetTotalAmount": null,
       "TradeDeliveryNoticeMonetarySummationIncludingTaxesTotalAmount": null
     },
-    "DeliveryItem": [
+    "DeliveryNoticeItem": [
       {
         "ExchangedDeliveryNoticeDocumentIdentifier": "100",
         "DeliveryNoticeDocumentItemlineIdentifier": "10",

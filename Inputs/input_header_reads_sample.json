@@ -8,8 +8,8 @@
   "business_partner": 201,
   "service_label": "FUNCTION_DPFM_DELIVERY_NOTICE_EDI_FOR_SMES_CSV_READS",
   "api_type": "function",
-  "Delivery": {
-    "FilePath": "/inputs/delivery-notice-edi-for-smes/csv/boi9ar543dg91ipdnspi099u231280ab0v8af0ew.csv"
+  "DeliveryNotice": {
+    "FilePath": "./Inputs/Delivery_Notice_EDI_For_SMEs_CSV_Reads_Format_For_Updates_20230311_v0.0001.csv"
   },
   "api_schema": "DPFMDeliveryNoticeEDIForSMEsCSVReads",
   "accepter": ["All"],

@@ -16,8 +16,8 @@ func ConvertToConcatMessage(filePath string) (*[]DataConcatenation, error) {
 	}
 	// defer f.Close()
 
-	allHeaders := make([]DeliveryHeader, 0)
-	allItems := make([]DeliveryItem, 0)
+	allHeaders := make([]DeliveryNoticeHeader, 0)
+	allItems := make([]DeliveryNoticeItem, 0)
 
 	err = gocsv.UnmarshalFile(f, &allHeaders)
 	if err != nil {
@@ -52,7 +52,7 @@ func ConvertToConcatMessage(filePath string) (*[]DataConcatenation, error) {
 	return &data, nil
 }
 
-func getOrderIDs(headers []DeliveryHeader) []string {
+func getOrderIDs(headers []DeliveryNoticeHeader) []string {
 	idCheck := make(map[string]struct{})
 	for _, v := range headers {
 		idCheck[v.ExchangedDeliveryNoticeDocumentIdentifier] = struct{}{}
@@ -64,9 +64,9 @@ func getOrderIDs(headers []DeliveryHeader) []string {
 	return ids
 }
 
-func getUniqueHeaders(headers *[]DeliveryHeader) []DeliveryHeader {
+func getUniqueHeaders(headers *[]DeliveryNoticeHeader) []DeliveryNoticeHeader {
 	idCheck := make(map[string]struct{})
-	unique := make([]DeliveryHeader, 0, len(*headers))
+	unique := make([]DeliveryNoticeHeader, 0, len(*headers))
 	for i, v := range *headers {
 		_, ok := idCheck[v.ExchangedDeliveryNoticeDocumentIdentifier]
 		if ok {
@@ -78,9 +78,9 @@ func getUniqueHeaders(headers *[]DeliveryHeader) []DeliveryHeader {
 	return unique
 }
 
-func getUniqueItem(items *[]DeliveryItem, dID string) []DeliveryItem {
+func getUniqueItem(items *[]DeliveryNoticeItem, dID string) []DeliveryNoticeItem {
 	itemIDs := make([]string, 0)
-	unique := make([]DeliveryItem, 0, len(*items))
+	unique := make([]DeliveryNoticeItem, 0, len(*items))
 	for i, v := range *items {
 		if v.ExchangedDeliveryNoticeDocumentIdentifier != dID || isContain(itemIDs, v.ExchangedDeliveryNoticeDocumentIdentifier) {
 			continue

@@ -31,7 +31,7 @@ func NewDPFMAPICaller(
 }
 
 func (c *DPFMAPICaller) DeliveryNoticeEdiForSmes(rmq *rabbitmq.RabbitmqClient, reader *dpfm_api_input_reader.FileReader, f *dpfm_api_input_reader.Request) error {
-	err := deleteSecondRow(f.Delivery.FilePath)
+	err := deleteSecondRow(f.DeliveryNotice.FilePath)
 	if err != nil {
 		err = xerrors.Errorf("delete second row error: %w", err)
 		data := c.createHeaderData(f, err)
@@ -44,7 +44,7 @@ func (c *DPFMAPICaller) DeliveryNoticeEdiForSmes(rmq *rabbitmq.RabbitmqClient, r
 		return nil
 	}
 
-	deliveryMessage, err := dpfm_api_output_formatter.ConvertToConcatMessage(f.Delivery.FilePath)
+	deliveryMessage, err := dpfm_api_output_formatter.ConvertToConcatMessage(f.DeliveryNotice.FilePath)
 	if err != nil {
 		return xerrors.Errorf("file convert error: %w", err)
 
